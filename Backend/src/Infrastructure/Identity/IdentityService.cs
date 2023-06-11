@@ -60,7 +60,7 @@ public class IdentityService : IIdentityService
 
         var emailDto = _emailService.CreateMailForAccountVerification(userDto);
 
-        _emailService.SendMail(request.Email, emailDto.Subject, emailDto.Message);
+        //_emailService.SendMail(request.Email, emailDto.Subject, emailDto.Message);
 
         _logger.LogInformation(AuthMessage.RegistrationSuccessful);
 
@@ -172,7 +172,7 @@ public class IdentityService : IIdentityService
 
         var emailDto = _emailService.CreateMailForResetPassword(userDto);
         
-        _emailService.SendMail(user.Email, emailDto.Subject, emailDto.Message);
+        //_emailService.SendMail(user.Email, emailDto.Subject, emailDto.Message);
 
         return Result<Unit>.Success(Unit.Value);
     }
